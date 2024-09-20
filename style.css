@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+a:link { 
+    text-decoration: none; 
+  } 
+  a:visited { 
+    text-decoration: none; 
+  } 
+  a:hover { 
+    text-decoration: none; 
+  } 
+  a:active { 
+    text-decoration: none; 
+  }  
+
+.logo {
+    color: #c00403;
+    font-size: 28px; 
+    font-family: Roboto; 
+    font-weight: 600;
+    transition: .5s ease;
+    margin-left: 80px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: #c00403;
+}
+
+body{
+    background-color: #0e0e0e;
+}
+
+.navbar-nav a{
+    text-align: center;
+    border-radius: 10px;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.navbar-nav a.active{
+    background-color: #c00403;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.navbar-nav a.active,.navbar-nav a:hover{
+    background-color: #7c0509;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+@media(max-width:992px){
+    .navbar-nav a{
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 25px;
+        transition: .5s ease;
+        cursor: pointer;
+    }
+    
+    .navbar-nav a.active{
+        background-color: #c00403;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    .navbar-nav a.active,.navbar-nav a:hover{
+        background-color: #7c0509;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: center;
+        border-radius: 10px;
+    }    
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.bg {
+    background-image: url("https://img.freepik.com/free-vector/red-light-lines-black-background_107791-30452.jpg?t=st=1726720827~exp=1726724427~hmac=7d1d895e74bcb5b67e8d7d11934528c1403ac9fb0414a8a4db3eebfb7bcb8bc6&w=1380");
+    background-size: cover;
+    background-position: center;
+}
+
+.heading {
+    font-family: "Roboto";
+    margin-left: 40px;
+    font-size: 93px;
+    font-weight: 600;
+    color: white;
+    background-image: linear-gradient(to right, #c00403, #f4abab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 1s ease-out, bounce 2s infinite;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+.box {
+    background-color: black;
+    text-align: center;
+    height: 50px;
+}
+
+.copy {
+    color: grey;
+    padding-top: 20px;
+    font-family: "Roboto";
+    font-size: 13px;
+}
+
+textarea {
+    width: 100%;
+    margin-left: 150px;
+    margin-right: 150px;
+    height: 860px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #1e1e1e;
+    color: white;
+    font-family: 'Sans-Serif', monospace;
+    font-weight: bold;
+    font-size: 23px;
+    resize: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-out;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+textarea:focus {
+    outline: none;
+    border: 2px solid #29717a;
+    box-shadow: 0 0 10px rgba(41, 113, 122, 0.5);
+}
+
+
+.paraa {
+    font-family: "Roboto";
+    margin-top: 130px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to left, #360404, #9d0506);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease-out;
+}
+
+.para {
+    font-family: "Roboto";
+    margin-left: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}

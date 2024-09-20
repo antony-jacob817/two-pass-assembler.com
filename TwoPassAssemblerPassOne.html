@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass One Algorithm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0e0e0e;">
+        <a class="logo" href="#">Antony Jacob</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+            <a style="margin-right: 80px; font-size: 20px; color: white;" class="nav-link" href="TwoPassAssemblerHome.html">Home <span class="sr-only">(current)</span></a>
+            <a style="margin-right: 80px; font-size: 20px; color: white;" class="nav-link active" href="TwoPassAssemblerPassOne.html">Pass One</a>
+            <a style="margin-right: 80px; font-size: 20px; color: white;" class="nav-link" href="TwoPassAssemblerPassTwo.html">Pass Two</a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg">
+        <div>
+            <div class="row">
+                <div class="col-xl-5 col-lg-12">
+                    <div>
+                        <h1 class="heading mt-5">Two Pass<br>Assembler</h1>
+                    </div>
+                    <p class="para">By Antony Jacob</p>
+                </div>
+                <div class="col-xl-7 col-lg-12">
+                    <p class="paraa">Pass One Algorithm</p>
+                </div>
+            </div>
+            <div class="row">
+                <textarea>
+begin
+    read first input line
+    if OPCODE = ‘START’ then
+        begin
+            save #[OPERAND] as starting address
+            initialize LOCCTR to starting address
+            write line to intermediate file
+            read next input line
+        end {if START}
+    else
+        initialize LOCCTR to 0
+    while OPCODE != ‘END’ do
+        begin
+            if this is not a comment line then
+                begin
+                    if there is a symbol in the LABEL field then
+                        begin
+                            search SYMTAB for LABEL
+                            if found then
+                                set error flag (duplicate symbol)
+                            else
+                                insert (LABEL,LOCCTR) into SYMTAB
+                        end {if symbol}
+                    search OPTAB for OPCODE
+                    if found then
+                        add 3 {instruction length} to LOCCTR
+                    else if OPCODE = ‘WORD’ then
+                        add 3 to LOCCTR
+                    else if OPCODE = ‘RESW’ then
+                        add 3 * #[OPERAND] to LOCCTR
+                    else if OPCODE = 'RESB’ then
+                        add #[OPERAND] to LOCCTR
+                    else if OPCODE = ‘BYTE’ then
+                        begin
+                            find length of constant in bytes
+                            add length to LOCCTR
+                        end {if BYTE}
+                    else
+                        set error flag (invalid operation code)
+                end {if not a comment}
+            write line to intermediate file
+            read next input line
+        end {while not END}
+    write last line to intermediate file
+    save (LOCCTR - starting address) as program length
+end {Pass 1}
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <p class="copy">Copyright © 2024 TwoPassAssembler | By Antony Jacob</p>
+    </div>
+</body>
+
+</html>
