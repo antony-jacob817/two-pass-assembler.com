@@ -372,7 +372,7 @@ label {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
     .heading{
         font-size: 36px;
         text-align: center;
@@ -421,6 +421,89 @@ label {
     
     .button {
         margin: auto;
+        width: 80%;
+    }
+    
+    #runButton {
+        padding: 0.5rem 1.5rem;
+        border-radius: 1.0rem;
+        font-size: 15px;
+        letter-spacing: 0.2rem;
+    }
+    
+    textarea {
+        font-size: 15px;
+        overflow-y: auto;
+    }    
+    
+    .modern-tabs .nav-link {
+        background-color: #000;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    label {
+        font-size: 15px;
+        margin-left: 20px;
+    }  
+    
+    .download-btn {
+        padding: 0.6rem 2rem;
+        border-radius: 12px;
+        font-size: 15px;
+    }  
+}
+
+@media screen and (max-width: 768px) {
+    .heading{
+        font-size: 36px;
+        text-align: center;
+        margin-left: 0;        
+    }
+
+    .paraa {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 19px;
+    }
+    
+    .para {
+        margin-left: 0;
+        margin-top: 3px;
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .para1 {
+        margin-top: 6px;
+        text-align: center;
+        margin-bottom: 6px;
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .choose::-webkit-file-upload-button {
+        font-size: 12px;
+        padding-left: 5px;
+    }
+    
+    .choose {
+        color: #93080b;
+        font-size: 9px;
+    }
+    
+    input[type="file"] {
+        padding: 10px;
+        margin-left: 6px;
+        width: 160px;
+        border-radius: 15px;
+        margin-bottom: 0;
+    }
+    
+    .button {
+        margin: auto;
+        width: 80%;
     }
     
     #runButton {
