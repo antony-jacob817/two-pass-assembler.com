@@ -109,7 +109,7 @@ html, body {
 .heading {
     font-family: "Roboto";
     margin-left: 40px;
-    font-size: 93px;
+    font-size: 80px;
     font-weight: 600;
     color: white;
     background-image: linear-gradient(to right, #c00403, #f4abab);
