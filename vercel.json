@@ -1,9 +1,7 @@
 {
-    "builds": [
-      { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "out" } }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/" }
-    ]
+  "routes": [
+    { "src": "/", "dest": "/TwoPassAssemblerHome.html" },
+    { "src": "/pass-one", "dest": "/TwoPassAssemblerPassOne.html" },
+    { "src": "/pass-two", "dest": "/TwoPassAssemblerPassTwo.html" }
+  ]
 }
-  
