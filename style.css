@@ -146,15 +146,6 @@ textarea:focus {
     box-shadow: 0 0 10px rgba(41, 113, 122, 0.5);
 }
 
-.para {
-    font-family: "Roboto";
-    text-align: center;
-    font-size: 35px;
-    font-weight: bold;
-    color: white;
-    animation: fadeInUp 1s ease-out;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -231,11 +222,6 @@ textarea:focus {
         margin-bottom: 20px;
         font-size: 13px;
         overflow-y: auto;
-    }
-    
-    .para {
-        margin-left: 0;
-        font-size: 15px;
     }  
 }
 
@@ -253,9 +239,4 @@ textarea:focus {
         font-size: 13px;
         overflow-y: auto;
     }
-    
-    .para {
-        margin-left: 0;
-        font-size: 15px;
-    }  
 }
