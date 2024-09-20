@@ -95,7 +95,7 @@ html, body {
 
 .heading {
     font-family: "Roboto";
-    margin-left: 40px;
+    text-align: center;
     font-size: 80px;
     font-weight: 600;
     color: white;
@@ -103,25 +103,7 @@ html, body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: slideIn 1s ease-out, bounce 2s infinite;
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
+}
 
 .box {
     background-color: black;
@@ -164,23 +146,9 @@ textarea:focus {
     box-shadow: 0 0 10px rgba(41, 113, 122, 0.5);
 }
 
-
-.paraa {
-    font-family: "Roboto";
-    margin-top: 130px;
-    text-align: center;
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
-    background-image: linear-gradient(to left, #360404, #9d0506);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadeInUp 1s ease-out;
-}
-
 .para {
     font-family: "Roboto";
-    margin-left: 40px;
+    text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: white;
@@ -192,7 +160,6 @@ textarea:focus {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -204,7 +171,6 @@ textarea:focus {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -216,7 +182,6 @@ textarea:focus {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -224,20 +189,73 @@ textarea:focus {
 }
 
 @keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
-
     40% {
         transform: translateY(-10px);
     }
-
     60% {
         transform: translateY(-5px);
     }
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 36px;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    textarea {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        overflow-y: auto;
+    }
+    
+    .para {
+        margin-left: 0;
+        font-size: 15px;
+    }  
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 36px;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    textarea {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        overflow-y: auto;
+    }
+    
+    .para {
+        margin-left: 0;
+        font-size: 15px;
+    }  
 }
