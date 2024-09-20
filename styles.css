@@ -425,12 +425,9 @@ label {
     
     #runButton {
         padding: 0.5rem 1.5rem;
-        background-color: #000000;
         border-radius: 1.0rem;
         font-size: 15px;
-        color: #801919;
         letter-spacing: 0.2rem;
-        border: 2px solid #801919;
     }
     
     textarea {
