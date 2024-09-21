@@ -17,7 +17,7 @@ a:active {
 }  
 
 body {
-    background-color: #0e0e0e;
+    background-color: #f2f2f2;
 }
 
 html, body {
@@ -27,7 +27,7 @@ html, body {
 }
 
 .logo {
-    color: #c00403;
+    color: #0077c8;
     font-size: 28px; 
     font-family: Roboto; 
     font-weight: 600;
@@ -36,16 +36,19 @@ html, body {
 }
 
 .bg {
-    background-image: url("https://img.freepik.com/free-vector/red-light-lines-black-background_107791-30452.jpg?t=st=1726720827~exp=1726724427~hmac=7d1d895e74bcb5b67e8d7d11934528c1403ac9fb0414a8a4db3eebfb7bcb8bc6&w=1380");
+    background-image: url("https://img.freepik.com/free-photo/border-from-blue-paint_23-2147809127.jpg?t=st=1726897483~exp=1726901083~hmac=4e1a56b7d404cf5b94b6079898c6bc59b01ab278ea9d1d321ff72a1860d81f75&w=996");
     background-size: cover;
     background-position: center;
 }
 
 .logo:hover {
     transform: scale(1.1);
-    color: #c00403;
+    color: #0077c8;
 }
 .navbar-nav a {
+    background-color: #ffffff;
+    color: #0077c8;
+    border: 1px solid #0077c8;
     text-align: center;
     border-radius: 10px;
     transition: .5s ease;
@@ -53,7 +56,7 @@ html, body {
 }
 
 .navbar-nav a.active {
-    background-color: #c00403;
+    background-color: #0077c8;
     padding-top: 8px;
     padding-bottom: 8px;
     text-align: center;
@@ -61,7 +64,8 @@ html, body {
 }
 
 .navbar-nav a.active, .navbar-nav a:hover {
-    background-color: #7c0509;
+    background-color: #0077c8;
+    color: #0077c8;
     padding-top: 8px;
     padding-bottom: 8px;
     text-align: center;
@@ -79,7 +83,7 @@ html, body {
     }
     
     .navbar-nav a.active {
-        background-color: #c00403;
+        background-color: #0077c8;
         padding-top: 8px;
         padding-bottom: 8px;
         text-align: center;
@@ -87,7 +91,8 @@ html, body {
     }
     
     .navbar-nav a.active, .navbar-nav a:hover {
-        background-color: #7c0509;
+        background-color: #0077c8;
+        color: #0077c8;
         padding-top: 8px;
         padding-bottom: 8px;
         text-align: center;
@@ -96,13 +101,13 @@ html, body {
 }
 
 .box {
-    background-color: black;
+    background-color: #333333;
     text-align: center;
     height: 50px;
 }
 
 .copy {
-    color: grey;
+    color: rgb(255, 255, 255);
     padding-top: 20px;
     font-family: "Roboto";
     font-size: 13px;
@@ -113,8 +118,8 @@ html, body {
     margin-left: 40px;
     font-size: 80px;
     font-weight: 600;
-    color: white;
-    background-image: linear-gradient(to right, #c00403, #f4abab);
+    color: #333333;
+    background-image: linear-gradient(to right, #0099ff, #daeaf4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: slideIn 1s ease-out, bounce 2s infinite;
@@ -126,7 +131,7 @@ html, body {
     margin-left: 40px;
     font-size: 45px;
     font-weight: bold;
-    color: white;
+    color: #333333;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -135,7 +140,7 @@ html, body {
     margin-left: 40px;
     font-size: 35px;
     font-weight: bold;
-    color: white;
+    color: #333333;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -146,7 +151,7 @@ html, body {
     margin-left: 40px;
     font-size: 25px;
     font-weight: bold;
-    color: #ffffff;
+    color: #333333;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -156,7 +161,7 @@ html, body {
     font-weight: bold;
     font-family: "Roboto";
     background: #0000;
-    color: #93080b;
+    color: #ffffff;
     padding-left: 15px;
     border: none;
     border-radius: 10px;
@@ -170,17 +175,17 @@ input[type="file"] {
     padding: 20px;
     margin-left: 40px;
     width: 270px;
-    border: 2px dashed #396760;
+    border: 2px dashed #e0f7fa;
     border-radius: 25px;
-    background-color: #ffffff;
+    background-color: #0077c8;
     margin-bottom: 20px;
     transition: border-color 0.3s, background-color 0.3s;
     animation: fadeIn 1s ease-out;
 }
 
 input[type="file"]:hover {
-    border-color: #93080b;
-    background-color: #f7afb2d4;
+    border-color: #0077c8;
+    background-color: #b2ebf2;
 }
 
 textarea {
@@ -190,8 +195,8 @@ textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #f9f9f9;
+    color: #333333;
     font-family: 'Sans-Serif', monospace;
     font-weight: bold;
     font-size: 23px;
@@ -211,8 +216,8 @@ textarea:focus {
 
 
 .modern-tabs .nav-link {
-    background-color: #000;
-    color: #fff;
+    background-color: #ffffff;
+    color: #0077c8;
     border: none;
     border-radius: 5px 5px 0 0;
     padding: 12px 20px;
@@ -221,8 +226,8 @@ textarea:focus {
 }
 
 .modern-tabs .nav-link.active {
-    background-color: #7c0509;
-    color: #fff;
+    background-color: #1e7ab3;
+    color: #ffffff;
     border-bottom: 2px solid #fff;
     border-radius: 5px 5px 0 0;
 }
@@ -236,7 +241,7 @@ textarea:focus {
 .tab-content textarea {
     width: 100%;
     height: 500px;
-    background-color: #1e1e1e;
+    background-color: #333333;
     color: #fff;
     border: none;
     padding: 10px;
@@ -247,7 +252,7 @@ textarea:focus {
 label {
     font-size: 20px;
     margin-left: 40px;
-    color: #ffffff;
+    color: #333333;
     font-weight: bold;
     margin-bottom: 10px;
     display: block;
@@ -255,7 +260,7 @@ label {
 }
 
 .choose {
-    color: #93080b;
+    color: #ffffff;
 }
 
 .button {
@@ -265,13 +270,13 @@ label {
 #runButton {
     display: inline-block;
     padding: 0.8rem 2.8rem;
-    background-color: #000000;
+    background-color: #0077c8;
     border-radius: 1.5rem;
     font-size: 25px;
-    color: #801919;
+    color: #ffffff;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #801919;
+    border: 2px solid #ffffff;
     animation: fadeInUp 1s ease-out;
     transition: 0.3s ease;
     cursor: pointer;
@@ -280,7 +285,7 @@ label {
 .download-btn {
     display: inline-block;
     padding: 0.8rem 2.8rem;
-    background: linear-gradient(to right, #4f0003, #360b0c);
+    background: linear-gradient(to right, #0077c8, #004f6e); /* Blue gradient for download button */
     border-radius: 15px;
     margin-right: 20px;
     margin-bottom: 15px;
@@ -296,7 +301,6 @@ label {
 
 .download-btn:hover {
     transform: scale(1.05);
-    background-color: #801919;
     color: white;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -304,9 +308,10 @@ label {
 
 #runButton:hover {
     transform: scale3d(1.03);
-    background-color: #801919;
+    background-color: #ffffff;
     color: black;
-    box-shadow: 0 0 25px #801919;
+    border: 2px solid #0077c8;
+    box-shadow: 0 0 25px #ffffff;
 }
 
 @keyframes fadeIn {
@@ -407,7 +412,6 @@ label {
     }
     
     .choose {
-        color: #93080b;
         font-size: 9px;
     }
     
@@ -437,7 +441,6 @@ label {
     }    
     
     .modern-tabs .nav-link {
-        background-color: #000;
         font-size: 12px;
         padding: 8px 12px;
     }
@@ -489,7 +492,6 @@ label {
     }
     
     .choose {
-        color: #93080b;
         font-size: 9px;
     }
     
@@ -519,7 +521,6 @@ label {
     }    
     
     .modern-tabs .nav-link {
-        background-color: #000;
         font-size: 12px;
         padding: 8px 12px;
     }
