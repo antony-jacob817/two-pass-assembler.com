@@ -386,7 +386,7 @@ label {
 
     .paraa {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 0;
         text-align: center;
         font-size: 19px;
     }
@@ -425,7 +425,7 @@ label {
     
     .button {
         margin: auto;
-        width: 80%;
+        width: 25%;
     }
     
     #runButton {
@@ -466,7 +466,7 @@ label {
 
     .paraa {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 0;
         text-align: center;
         font-size: 19px;
     }
@@ -505,7 +505,7 @@ label {
     
     .button {
         margin: auto;
-        width: 80%;
+        width: 25%;
     }
     
     #runButton {
