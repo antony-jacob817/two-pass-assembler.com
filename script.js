@@ -1,3 +1,42 @@
+document.getElementById("runButton").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const inputFile = document.getElementById("inputFile").files[0];
+    const optabFile = document.getElementById("optabFile").files[0];
+
+    if (!inputFile || !optabFile) {
+        alert("Please upload both input and optab files.");
+        return;
+    }
+
+    if (!validateFileExtension(inputFile) || !validateFileExtension(optabFile)) {
+        alert("Invalid file type. Please upload valid .txt files only.");
+        document.getElementById("inputFile").value = '';
+        document.getElementById("optabFile").value = '';
+        return;
+    }
+
+    const reader1 = new FileReader();
+    const reader2 = new FileReader();
+
+    reader1.onload = function(e) {
+        const inputContent = e.target.result;
+        reader2.readAsText(optabFile);
+
+        reader2.onload = function(e) {
+            const optabContent = e.target.result;
+            processAssembler(inputContent, optabContent);
+        };
+    };
+
+    reader1.readAsText(inputFile);
+});
+
+function validateFileExtension(file) {
+    const allowedExtension = /\.txt$/i;
+    return allowedExtension.test(file.name);
+}
+
 function processAssembler(inputContent, optabContent) {
     const inputLines = inputContent.split("\n");
     const optabLines = optabContent.split("\n");
@@ -172,4 +211,14 @@ document.getElementById("runButton").addEventListener("click", function(e) {
     } else {
         alert("Please upload both input and optab files.");
     }
+});
+
+document.getElementById('resetButton').addEventListener('click', function() {
+    document.getElementById('inputFile').value = '';
+    document.getElementById('optabFile').value = '';
+    document.getElementById('intermediateOutput').value = '';
+    document.getElementById('symtabOutput').value = '';
+    document.getElementById('programLengthOutput').value = '';
+    document.getElementById('output').value = '';
+    document.getElementById('objectCode').value = '';
 });
