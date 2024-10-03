@@ -213,12 +213,13 @@ document.getElementById("runButton").addEventListener("click", function(e) {
     }
 });
 
-document.getElementById('resetButton').addEventListener('click', function() {
-    document.getElementById('inputFile').value = '';
-    document.getElementById('optabFile').value = '';
-    document.getElementById('intermediateOutput').value = '';
-    document.getElementById('symtabOutput').value = '';
-    document.getElementById('programLengthOutput').value = '';
-    document.getElementById('output').value = '';
-    document.getElementById('objectCode').value = '';
+document.querySelectorAll('#resetButton').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('textarea').forEach(function(textarea) {
+            textarea.value = '';
+        });
+        document.querySelectorAll('input[type="file"]').forEach(function(fileInput) {
+            fileInput.value = '';
+        });
+    });
 });
