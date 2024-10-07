@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/TwoPassAssemblerHome.html" },
+    { "src": "/pass-one", "dest": "/TwoPassAssemblerPassOne.html" },
+    { "src": "/pass-two", "dest": "/TwoPassAssemblerPassTwo.html" }
+  ]
+}
