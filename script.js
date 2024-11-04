@@ -126,7 +126,7 @@ function processAssembler(inputContent, optabContent) {
             objectCodeContent += `${currentLOCCTR}\t${fullObjectCode}\n`;
             outputContent += `${currentLOCCTR}\t${originalLine}\t${fullObjectCode}\n`;
 
-            if (textRecordLength >= 30) {
+            if (textRecordLength >= 15) {
                 textRecord += `T^${textStartAddress}^${textRecordLength.toString(16).padStart(2, '0')}^${textRecordBuffer.join('^')}\n`;
                 textStartAddress = LOCCTR.toString(16).padStart(6, "0");
                 textRecordBuffer = [];
