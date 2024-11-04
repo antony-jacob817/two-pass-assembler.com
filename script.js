@@ -62,19 +62,19 @@ function processAssembler(inputContent, optabContent) {
             startAddress = parseInt(operand, 16);
             LOCCTR = startAddress;
             programName = label;
-            intermediateContent += \t${line}\n;
+            intermediateContent += `\t${line}\n`;
         } else if (opcode === "END") {
-            intermediateContent += ${LOCCTR.toString(16)}\t${line}\n;
+            intermediateContent += `${LOCCTR.toString(16)}\t${line}\n`;
             programLength = LOCCTR - startAddress;
         } else {
-            intermediateContent += ${LOCCTR.toString(16).padStart(4, '0')}\t${line}\n;
+            intermediateContent += `${LOCCTR.toString(16).padStart(4, '0')}\t${line}\n`;
 
             if (label && label !== "-") {
                 if (SYMTAB[label]) {
-                    alert(Error: Symbol ${label} already exists in SYMTAB.);
+                    alert(`Error: Symbol ${label} already exists in SYMTAB.`);
                 } else {
                     SYMTAB[label] = LOCCTR;
-                    symtabContent += ${label}\t${LOCCTR.toString(16).padStart(4, '0')}\n;
+                    symtabContent += `${label}\t${LOCCTR.toString(16).padStart(4, '0')}\n`;
                 }
             }
 
@@ -97,7 +97,7 @@ function processAssembler(inputContent, optabContent) {
     let intermediateLines = intermediateContent.split("\n");
     LOCCTR = startAddress;
 
-    let headerRecord = H^${programName.padEnd(6)}^${startAddress.toString(16).padStart(6, '0')}^${programLength.toString(16).padStart(6, '0')}\n;
+    let headerRecord = `H^${programName.padEnd(6)}^${startAddress.toString(16).padStart(6, '0')}^${programLength.toString(16).padStart(6, '0')}\n`;
     let textRecord = "";
     let textStartAddress = LOCCTR.toString(16).padStart(6, "0");
     let textRecordBuffer = [];
@@ -110,7 +110,7 @@ function processAssembler(inputContent, optabContent) {
         const [label = '', opcode = '', operand = ''] = originalLine.split(/\s+/);
 
         if (opcode === "START") {
-            outputContent += \t${originalLine}\n;
+            outputContent += `\t${originalLine}\n`;
         } else if (OPTAB[opcode]) {
             let objCode = OPTAB[opcode];
             let address = "0000";
@@ -119,15 +119,15 @@ function processAssembler(inputContent, optabContent) {
                 address = SYMTAB[operand].toString(16).padStart(4, "0");
             }
 
-            let fullObjectCode = ${objCode}${address};
+            let fullObjectCode = `${objCode}${address}`;
             textRecordBuffer.push(fullObjectCode);
             textRecordLength += 3;
 
-            objectCodeContent += ${currentLOCCTR}\t${fullObjectCode}\n;
-            outputContent += ${currentLOCCTR}\t${originalLine}\t${fullObjectCode}\n;
+            objectCodeContent += `${currentLOCCTR}\t${fullObjectCode}\n`;
+            outputContent += `${currentLOCCTR}\t${originalLine}\t${fullObjectCode}\n`;
 
             if (textRecordLength >= 30) {
-                textRecord += T^${textStartAddress}^${textRecordLength.toString(16).padStart(2, '0')}^${textRecordBuffer.join('^')}\n;
+                textRecord += `T^${textStartAddress}^${textRecordLength.toString(16).padStart(2, '0')}^${textRecordBuffer.join('^')}\n`;
                 textStartAddress = LOCCTR.toString(16).padStart(6, "0");
                 textRecordBuffer = [];
                 textRecordLength = 0;
@@ -137,8 +137,8 @@ function processAssembler(inputContent, optabContent) {
             textRecordBuffer.push(wordValue);
             textRecordLength += 3;
 
-            objectCodeContent += ${currentLOCCTR}\t${wordValue}\n;
-            outputContent += ${currentLOCCTR}\t${originalLine}\t${wordValue}\n;
+            objectCodeContent += `${currentLOCCTR}\t${wordValue}\n`;
+            outputContent += `${currentLOCCTR}\t${originalLine}\t${wordValue}\n`;
         } else if (opcode === "BYTE") {
             let byteValue = operand.substring(2, operand.length - 1);
             if (operand.startsWith("C'")) {
@@ -149,21 +149,21 @@ function processAssembler(inputContent, optabContent) {
             textRecordBuffer.push(byteValue);
             textRecordLength += byteValue.length / 2;
 
-            objectCodeContent += ${currentLOCCTR}\t${byteValue}\n;
-            outputContent += ${currentLOCCTR}\t${originalLine}\t${byteValue}\n;
+            objectCodeContent += `${currentLOCCTR}\t${byteValue}\n`;
+            outputContent += `${currentLOCCTR}\t${originalLine}\t${byteValue}\n`;
         } else if (opcode === "RESW" || opcode === "RESB") {
-            outputContent += ${currentLOCCTR}\t${originalLine}\n;
+            outputContent += `${currentLOCCTR}\t${originalLine}\n`;
         }
 
         if (opcode === "END") {
             if (textRecordBuffer.length > 0) {
-                textRecord += T^${textStartAddress}^${textRecordLength.toString(16).padStart(2, '0')}^${textRecordBuffer.join('^')}\n;
+                textRecord += `T^${textStartAddress}^${textRecordLength.toString(16).padStart(2, '0')}^${textRecordBuffer.join('^')}\n`;
             }
-            outputContent += ${currentLOCCTR}\t${originalLine}\n;
+            outputContent += `${currentLOCCTR}\t${originalLine}\n`;
         }
     });
 
-    let endRecord = E^${startAddress.toString(16).padStart(6, '0')}\n;
+    let endRecord = `E^${startAddress.toString(16).padStart(6, '0')}\n`;
     objectCodeContent = headerRecord + textRecord + endRecord;
 
     document.getElementById("intermediateOutput").value = intermediateContent;
