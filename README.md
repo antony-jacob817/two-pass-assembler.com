@@ -1,35 +1,60 @@
-# two-pass-assembler
+# 🛠️ Two-Pass Assembler
 
-This project demonstrates how a two-pass assembler works. A two-pass assembler is a type of assembler that processes the source code in two passes to generate machine code or intermediate code. This approach is commonly used to resolve forward references and build symbol tables efficiently.
+A sleek, web-based demonstration of how a **Two-Pass Assembler** works under the hood. Ideal for students, educators, and systems programming enthusiasts, this project walks through how symbolic assembly code transforms into machine code using a step-by-step visual interface.
 
-## Features
+🔗 [Live Demo](https://two-pass-assembler-com.vercel.app/)  
 
-- **Educational Purpose:** Clearly illustrates the working of a two-pass assembler.
-- **Web-based Interface:** Built using HTML, CSS, and JavaScript for easy accessibility and visualization.
-- **Step-by-Step Process:** Shows both Pass 1 (symbol table creation) and Pass 2 (code generation).
+---
 
-## Technologies Used
+## 🚀 Why This Project?
 
-- HTML
-- CSS
-- JavaScript
+Forward references are a classic problem in assembly language. Our two-pass assembler **resolves them smartly**—first building a symbol table, then generating accurate machine code. This project turns a complex concept into an interactive, intuitive learning tool.
 
-## How It Works
+---
 
-1. **Pass 1:** Scans the assembly code to build a symbol table and detect labels.
-2. **Pass 2:** Uses the symbol table to translate assembly instructions into machine code.
+## ✨ Features
 
-## Getting Started
+- **🎓 Learning-First Design** – Built for clear understanding of each assembler pass.
+- **🌐 No Setup Required** – Just open it in your browser.
+- **👁️ Visual Debugging** – Real-time display of intermediate files, symbol table, and output.
+- **🧠 Intelligent Flow** – Separation of concerns across Pass 1 (analysis) and Pass 2 (code generation).
 
-1. Clone the repository:
+---
+
+## 🧩 Tech Stack
+
+- HTML5 + CSS3 – For responsive, minimal UI  
+- JavaScript – To simulate assembler logic entirely on the frontend  
+- Vercel – Hosting for blazing-fast access  
+
+---
+
+## ⚙️ How It Works
+
+### 🔍 Pass 1: Analysis Phase
+- Scans assembly source code
+- Builds a **Symbol Table**
+- Computes **Program Length**
+
+### 🧾 Pass 2: Code Generation
+- Resolves labels and symbols
+- Generates **Object Code**
+- Displays **Final Machine Instructions**
+
+---
+
+## 🧪 Try It Out
+
+1. Clone the repo:
    ```bash
    git clone https://github.com/antony-jacob817/two-pass-assembler.com.git
    ```
-2. Open `index.html` in your web browser.
+2. Open TwoPassAssemblerHome.html in your browser
 
-No additional dependencies are required.
+---
 
-## Example
+## 💡 Ideal For
 
-- Input your assembly code in the provided interface.
-- View the symbol table and generated machine code after both passes.
+- Operating Systems and Computer Architecture learners  
+- CS curriculum labs  
+- Self-paced systems programming projects
